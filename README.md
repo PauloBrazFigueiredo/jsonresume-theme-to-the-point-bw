@@ -21,7 +21,7 @@ The contacts were placed in a non-intrusive way. Nevertheless, the contacts are 
    cd jsonresume-theme-apage
    resume init
    ```
-   5. Serve your file with the theme:
+5. Serve your file with the theme:
    ```sh
    resume serve
    ```

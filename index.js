@@ -69,6 +69,27 @@ function render (resume) {
       }
 
       return text
+    },
+	parseWorkText: function (str) {
+	  if(str.lastIndexOf("[") == -1) {
+		  return str
+	  }
+	  var text = str.substring(0, str.lastIndexOf("[") - 1)
+      return text.trim()
+    },
+	parseWorkTech: function (str) {
+	  if(str.lastIndexOf("[") == -1) {
+	    return ''
+	  }
+	  let text = ''
+	  let content = str.substring(
+		str.lastIndexOf("[") + 1, 
+		str.lastIndexOf("]"))
+	  let tech = content.split(',')
+	  for (i = 0; i < tech.length; i++) {
+		text += '<span class=\'label label-default\'>' + tech[i].trim() + '</span>'
+	  }
+	  return text
     }
   })
 

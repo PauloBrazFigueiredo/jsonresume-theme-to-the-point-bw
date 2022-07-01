@@ -1,15 +1,22 @@
 :root {
-	--between-skills-education-space: 15rem;
+	--between-skills-education-space: 6.0rem;
 	--between-education-awards-space: 0;
 	
-	--dominant-color: #1E1E1E;
-	--sub-dominant-color: #6D6D6D;
-	--text-color: #737373;
+	--dominant-color: #0423BB;
+	--sub-dominant-color: #000000;
+	--text-color: #4E4E4E;
 	--white-color: #FFFFFF;
 	--background-color: #E5DED4;
 	--border-color: #C7C7C7;
 	--mouse-hover-color: red;
 
+	--skills-label: #FFFFFF;
+	--skills-label-background: #0423BB;
+	--work-label: #4E4E4E;
+	--work-label-background: #D1D1D1;
+	--interests-label: #FFFFFF;
+	--interests-label-background: #B1B1B1;
+	
 	--large-text-font: 1.4rem;
 	--small-title-text-font: 1.3rem;
 	--small-text-font: 1.2rem;
@@ -68,6 +75,15 @@ li.circle {
 	color: var(--sub-dominant-color);
 }
 
+.title-no-margin-top {
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 1.5rem;
+	color: var(--sub-dominant-color);
+	margin-top: 0;
+}
+
 .label {
 	padding: .3em .6em .3em;
 	line-height: 2.2em;
@@ -88,12 +104,12 @@ li.circle {
 }
 
 .between-skills-education-space{
-	height: 0;
+	height: var(--between-skills-education-space);
 	display:inline-block;
 }
 
 .between-education-awards-space {
-	height: 0;
+	height: var(--between-education-awards-space);
 	display:inline-block;
 }
 
@@ -107,7 +123,6 @@ li.circle {
 }
 
 /* REGION: Header - Sections */
-
 .section-name h1 {
 	color: var(--dominant-color);
 	text-align: center;
@@ -230,6 +245,22 @@ div.link-contact a.position:hover{
 	font-sixe: var(--large-font);
 }
 
+.section-work .label {
+	color: var(--work-label);
+	display: inline-block;
+	line-height: 1.2em;
+	padding: .2em .6em .2em;
+}
+
+.section-work .label-default {
+	background-color: var(--work-label-background);
+	margin-right: 0.3em;
+}
+
+.section-work li {
+	text-align: left;
+}
+
 /* REGION: Sidebar */
 
 .sidebar { 
@@ -248,6 +279,15 @@ div.link-contact a.position:hover{
 	margin-bottom: 0.5rem;
 	color: var(--text-color);
 	font-size: var(--small-text-font);
+}
+
+.section-skills .label {
+	color: var(--skills-label);
+	line-height: 1.8em;
+}
+
+.section-skills .label-default {
+	background-color: var(--skills-label-background);
 }
 
 .section-education .studyTitle {
@@ -313,6 +353,15 @@ div.link-contact a.position:hover{
 .section-interests .item .interests {
 	color: var(--text-color);
 	font-size: var(--small-text-font);
+}
+
+.section-interests .label {
+	color: var(--interests-label);
+	line-height: 1.8em;
+}
+
+.section-interests .label-default {
+	background-color: var(--interests-label-background);
 }
 
 .section-awards ul.awards {
@@ -388,6 +437,7 @@ div.link-contact a.position:hover{
 @media print {
 	a[href]:after {
 		content: none !important;
+		color: $primary;
 	}
 	
 	div.between-skills-education-space {
@@ -399,4 +449,15 @@ div.link-contact a.position:hover{
 		display:inline-block;
 		height: var(--between-education-awards-space);
 	}
+	
+	:root {
+		--between-skills-education-space: 12.0rem;
+	}
+}
+
+@page {
+	margin-top: 0.4in;
+    margin-bottom: 0.4in;
+    margin-left: 0.39in;
+    margin-right: 0.39in;
 }

@@ -50,9 +50,9 @@
 					<ul class="highlights">
 						{{#each highlights}}
 							{{#startsWith "-" .}}
-								<li class="circle subhighlights">{{trim (replaceFirst . "-" "")}}</li>
+								<li class="circle subhighlights">{{ parseWorkText (trim (replaceFirst . "-" ""))}} {{{parseWorkTech (trim (replaceFirst . "-" ""))}}}</li>
 							{{else}}
-								<li>{{.}}</li>
+							  <li>{{parseWorkText .}} {{{parseWorkTech .}}}</li>
 							{{/startsWith}}
 						{{/each}}
 					</ul>
